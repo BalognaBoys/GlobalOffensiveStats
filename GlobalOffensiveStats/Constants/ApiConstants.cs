@@ -19,4 +19,9 @@ namespace GlobalOffensiveStats.Constants
         public const String TOTAL_ROUNDS_PLAYED = "total_rounds_played";
         public const String TOTAL_MVPS = "total_mvps";
     }
+
+    class ApiKey
+    {
+        public const String API_KEY = "31747EB051E9A5134F22D17E48AC8CB7";
+    }
 }
