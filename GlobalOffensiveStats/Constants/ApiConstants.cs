@@ -23,6 +23,7 @@ namespace GlobalOffensiveStats.Constants
     class ApiKey
     {
         public const String API_KEY = "31747EB051E9A5134F22D17E48AC8CB7";
+    }
 
     //Delete this later
     class StatNames
