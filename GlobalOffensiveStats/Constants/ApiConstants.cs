@@ -18,6 +18,5 @@ namespace GlobalOffensiveStats.Constants
         public const String TOTAL_SHOTS_HIT = "total_shots_hit";
         public const String TOTAL_ROUNDS_PLAYED = "total_rounds_played";
         public const String TOTAL_MVPS = "total_mvps";
-        public const String ALL_TIME_ACCURACY = "total_kills";
     }
 }
