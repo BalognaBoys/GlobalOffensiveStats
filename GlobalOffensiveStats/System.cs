@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
+using GlobalOffensiveStats.GUI;
+
 
 namespace GlobalOffensiveStats
 {
-    class Application
+    class CSGOAPP
     {
-        static void Main(string[] args)
+        [STAThread]
+        static void Main()
         {
-            System.Console.WriteLine("Counter strike lol");
-            System.Console.ReadKey();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Window());
         }
- 
     }
 }
