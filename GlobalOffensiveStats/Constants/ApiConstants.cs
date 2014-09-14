@@ -23,5 +23,28 @@ namespace GlobalOffensiveStats.Constants
     class ApiKey
     {
         public const String API_KEY = "31747EB051E9A5134F22D17E48AC8CB7";
+
+    //Delete this later
+    class StatNames
+    {
+        public List<String> statNames;
+
+        public StatNames()
+        {
+             //For quick debug stuff
+             statNames = new List<string>();
+
+             statNames.Add(GetUserStatsForGameConstants.TOTAL_KILLS);
+             statNames.Add(GetUserStatsForGameConstants.TOTAL_DEATHS);
+             statNames.Add(GetUserStatsForGameConstants.TOTAL_WINS);
+             statNames.Add(GetUserStatsForGameConstants.TOTAL_DAMAGE_DONE);
+             statNames.Add(GetUserStatsForGameConstants.TOTAL_MONEY_EARNED);
+             statNames.Add(GetUserStatsForGameConstants.TOTAL_HEADSHOT_KILLS);
+             statNames.Add(GetUserStatsForGameConstants.TOTAL_SHOTS_FIRED);
+             statNames.Add(GetUserStatsForGameConstants.TOTAL_SHOTS_HIT);
+             statNames.Add(GetUserStatsForGameConstants.TOTAL_ROUNDS_PLAYED);
+             statNames.Add(GetUserStatsForGameConstants.TOTAL_MVPS);
+        }
+
     }
 }
