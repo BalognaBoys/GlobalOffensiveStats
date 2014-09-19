@@ -33,21 +33,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Constants\ApiConstants.cs" />
+    <Compile Include="Constants\Steam.cs" />
     <Compile Include="Models\CsgoStats.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="System.cs" />
+    <Compile Include="ApiHandler.cs" />
     <Compile Include="GUI\Window.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Constants\ApiConstants.cs" />
-    <Compile Include="Constants\Steam.cs" />
-    <Compile Include="ApiHandler.cs" />
-    <Compile Include="Models\CsgoStats.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="System.cs" />
-=======
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -56,7 +51,6 @@
     <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
->>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

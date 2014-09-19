@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GlobalOffensiveStats.Models;
+using GlobalOffensiveStats;
 
 namespace GlobalOffensiveStats.Models
 {
     class User
     {
-        private string steamId;
+        private string steamCommunityId;
         private int steamId64;
         private List<CsgoStats> allStatsList;   //TODO: find a beter name for allStatsList
 
@@ -23,17 +24,29 @@ namespace GlobalOffensiveStats.Models
             CsgoStats newStats;
             Dictionary<String, int> UserStatsFromApi;
 
-            UserStatsFromApi = this.makeApiCall();
+            UserStatsFromApi = this.makeApiCallForStats();
             newStats = new CsgoStats(UserStatsFromApi);
             return newStats;
         }
 
-        public Dictionary<String, int> makeApiCall()
+        public Dictionary<String, int> makeApiCallForStats()
         {
             ApiHandler apiHandler = new ApiHandler();
 
             Dictionary<String, int> UserStatsFromApi = apiHandler.getUserStatsForGame(steamId64);
             return UserStatsFromApi;
         }
+
+        public void setSteamId(String steamCommunityId)
+        {
+            this.steamCommunityId = steamCommunityId;
+        }
+
+        public void setSteamId64()
+        {
+            ApiHandler apiHandler = new ApiHandler();
+            steamId64 = apiHandler.getSteamId64FromCommunityId(steamCommunityId);
+        }
+
     }
 }

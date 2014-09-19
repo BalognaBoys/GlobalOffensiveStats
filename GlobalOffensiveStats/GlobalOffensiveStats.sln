@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalOffensiveStats", "GlobalOffensiveStats.csproj", "{A5EEBDDA-9216-4C7E-B135-93D14584AA6A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1D2BC136-FEF2-4754-982D-4E1058DD6B07}"
-	ProjectSection(SolutionItems) = preProject
-		CsgoStatsModel.cs = CsgoStatsModel.cs
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
