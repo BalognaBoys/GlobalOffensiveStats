@@ -34,6 +34,7 @@
   <ItemGroup>
     <Compile Include="Constants\ApiConstants.cs" />
     <Compile Include="Constants\Steam.cs" />
+    <Compile Include="DataContract\GlobalOffensiveStatsContract.cs" />
     <Compile Include="Models\CsgoStats.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="System.cs" />
@@ -47,6 +48,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Messaging" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Windows.Forms" />
