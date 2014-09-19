@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Web;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GlobalOffensiveStats.Constants;
 using System.Net;
-using System.Runtime.Serialization.Formatters;
+using System.Runtime.Serialization.Json;
 
 namespace GlobalOffensiveStats
 {
@@ -25,9 +26,10 @@ namespace GlobalOffensiveStats
 
             try
             {
-                string url = generateUrlForUserStatsForGame(steamId64);
-                Response apiResponse = MakeRequest(url);
-                ProcessResponse(locationsResponse);
+                String url = generateUrlForUserStatsForGame(steamId64);
+                HttpWebResponse apiResponse = MakeRequest(url);
+                ProcessResponse(apiResponse);
+
             }
             catch (Exception e)
             {
@@ -38,6 +40,35 @@ namespace GlobalOffensiveStats
             return UserStatsFromApi;
         }
 
+        private void ProcessResponse(HttpWebResponse apiResponse)
+        {
+            throw new NotImplementedException();
+        }
+
+        private HttpWebResponse MakeRequest(string url)
+        {
+            try
+            {
+                HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                        throw new Exception(
+                            String.Format(
+                                "Server error (HTTP {0}: {1}).",
+                                response.StatusCode,
+                                response.StatusDescription)
+                            );
+                    return response;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
         private String generateUrlForUserStatsForGame(int steamId64)
         {
             return "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/"
@@ -46,10 +77,27 @@ namespace GlobalOffensiveStats
             + "&steamid=" + steamId64;
         }
 
-        //http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=31747EB051E9A5134F22D17E48AC8CB7&vanityurl=deathbed210
-        public int getSteamId64FromCommunityId(String steamCommunityId)
+        public String getSteamId64FromCommunityId(String steamCommunityId)
         {
+            try
+            {
+                String url = generateUrlForNameConversion(steamCommunityId);
+                HttpWebResponse apiResponse = MakeRequest(url);
+                ProcessResponse(apiResponse);
 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.Read();
+            }
+        }
+
+        private String generateUrlForNameConversion(string steamCommunityId)
+        {
+            return "http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/"
+            + "?key=" + apiKey
+            + "&vanityurl=" + steamCommunityId;
         }
     }
 }

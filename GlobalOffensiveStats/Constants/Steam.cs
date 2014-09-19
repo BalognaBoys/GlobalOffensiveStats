@@ -8,7 +8,7 @@ namespace GlobalOffensiveStats.Constants
 {
     class Steam
     {
-        public const int CSGO_APP_ID = "730";
+        public const String CSGO_APP_ID = "730";
 
     }
 }
